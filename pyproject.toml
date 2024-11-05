@@ -6,8 +6,7 @@ build-backend = "hatchling.build"
 name = "remotetypes"
 version = "0.1.0"
 authors = [
-  { name="Tobias Diaz", email="tobias.diaz@uclm.es" },
-  { name="Jose Luis Segura", email="joseluis.segura@uclm.es"},
+  { name="Javier Plaza", email="javier.plaza3@alu.uclm.es" },
 ]
 description = "Template for rDistributed Systems laboratory"
 requires-python = ">=3.10"
