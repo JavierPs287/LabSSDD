@@ -1,8 +1,8 @@
 # remote-types repository template
 
-[![Tests](https://github.com/UCLM-ESI/remote-types/actions/workflows/tests.yml/badge.svg)](https://github.com/UCLM-ESI/remote-types/actions/workflows/tests.yml)
-[![Linters](https://github.com/UCLM-ESI/remote-types/actions/workflows/linters.yml/badge.svg)](https://github.com/UCLM-ESI/remote-types/actions/workflows/linters.yml)
-[![Type checking](https://github.com/UCLM-ESI/remote-types/actions/workflows/typechecking.yml/badge.svg)](https://github.com/UCLM-ESI/remote-types/actions/workflows/typechecking.yml)
+[![Tests](https://github.com/JavierPs287/LabSSDD/actions/workflows/tests.yml/badge.svg)](https://github.com/JavierPs287/LabSSDD/actions/workflows/tests.yml)
+[![Linters](https://github.com/JavierPs287/LabSSDD/actions/workflows/linters.yml/badge.svg)](https://github.com/JavierPs287/LabSSDD/actions/workflows/linters.yml)
+[![Type checking](https://github.com/JavierPs287/LabSSDD/actions/workflows/typechecking.yml/badge.svg)](https://github.com/JavierPs287/LabSSDD/actions/workflows/typechecking.yml)
 
 Template for the SSDD laboratory 2024-2025
 
