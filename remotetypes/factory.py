@@ -11,10 +11,9 @@ class Factory(rt.Factory):
     def get(self, type, identifier=None, current=None):
 
         if type == rt.TypeName.RSet:
-            rset=RemoteSet()
-            proxy=current.adapter.addWithUUID(rset)
-            rsetproxy=rt.RSetPrx.uncheckedCast(proxy)
+            rset = RemoteSet()
+            proxy = current.adapter.addWithUUID(rset)
+            rsetproxy = rt.RSetPrx.checkedCast(proxy)
             return rsetproxy
-        
         else:
             raise rt.UnknownType(type)
