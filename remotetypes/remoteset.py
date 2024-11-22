@@ -46,7 +46,7 @@ class RemoteSet(rt.RSet):
     def pop(self, current: Optional[Ice.Current] = None) -> str:
         """Remove and return an element from the storage."""
         try:
-            return self._storage.pop()
+            return self._storage_.pop()
 
         except KeyError as exc:
             raise rt.KeyError() from exc
