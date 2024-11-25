@@ -8,24 +8,26 @@ from remotetypes.factory import Factory
 
 
 class Server(Ice.Application):
-    """Ice.Application for the server."""
+    """Ice.Application para el servidor."""
 
     def __init__(self) -> None:
-        """Initialise the Server objects."""
+        """Inicializa el servidor."""
         super().__init__()
         self.logger = logging.getLogger(__file__)
+        self.factory = None
 
     def run(self, args: list[str]) -> int:
-        """Execute the main server actions..
-
-        It will initialise the needed middleware elements in order to execute the server.
-        """
-        factory_servant = Factory()
+        """Ejecuta las acciones principales del servidor."""
+        self.factory = Factory()
         adapter = self.communicator().createObjectAdapter("remotetypes")
-        proxy = adapter.add(factory_servant, self.communicator().stringToIdentity("factory"))
+        proxy = adapter.add(self.factory, self.communicator().stringToIdentity("factory"))
         self.logger.info('Proxy: "%s"', proxy)
 
         adapter.activate()
         self.shutdownOnInterrupt()
         self.communicator().waitForShutdown()
+
+        # Guarda los conjuntos al cerrar el servidor
+        if self.factory:
+            self.factory.save_sets()
         return 0
