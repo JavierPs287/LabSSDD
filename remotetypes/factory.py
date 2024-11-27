@@ -22,6 +22,12 @@ class Factory(rt.Factory):
             key = (identity.name if identity else None, identity.category if identity else None)
             if key in self.objetosExistentes:
                 #print(f"Objeto encontrado en memoria: {key}")
+                # if isinstance(self.objetosExistentes[key], rt.RSetPrx):
+                #     print("Es un RSetPrx")
+                # elif isinstance(self.objetosExistentes[key], rt.RTypePrx):
+                #     print("Es un RTypePrx")
+                # else:
+                #     print("Tipo desconocido")
                 return self.objetosExistentes[key]
 
             # Crear un nuevo objeto y agregarlo al adaptador
@@ -38,6 +44,14 @@ class Factory(rt.Factory):
             rsetproxy = rt.RSetPrx.checkedCast(proxy)
             self.objetosExistentes[key] = rsetproxy
             #print(f"Objeto creado y almacenado: {key}")
+            #print(f"{type(rsetproxy)}")
+            # if isinstance(rsetproxy, rt.RSetPrx):
+            #     print("Es un RSetPrx")
+            # elif isinstance(rsetproxy, rt.RTypePrx):
+            #     print("Es un RTypePrx")
+            # else:
+            #     print("Tipo desconocido")
+
             return rsetproxy
         else:
             raise rt.UnknownType(type)

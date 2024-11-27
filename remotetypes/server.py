@@ -26,8 +26,3 @@ class Server(Ice.Application):
         adapter.activate()
         self.shutdownOnInterrupt()
         self.communicator().waitForShutdown()
-
-        # Guarda los conjuntos al cerrar el servidor
-        if self.factory:
-            self.factory.save_sets()
-        return 0
