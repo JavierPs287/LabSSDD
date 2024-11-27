@@ -5,7 +5,7 @@ from remotetypes.remoteset import RemoteSet
 import Ice
 
 class Factory(rt.Factory):
-    """Implementación de la fábrica para crear objetos remotos."""
+    """Skeleton for the Factory implementation."""
     def __init__(self) -> None:
         # Diccionario para almacenar proxies, con clave como una tupla (name, category)
         self.objetosExistentes = {}
