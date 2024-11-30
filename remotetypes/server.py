@@ -21,6 +21,7 @@ class Server(Ice.Application):
         It will initialise the needed middleware elements in order to execute the server.
         """
         factory_servant = Factory()
+        factory_servant.cargar_estado("estados.json")
         adapter = self.communicator().createObjectAdapter("remotetypes")
         proxy = adapter.add(factory_servant, self.communicator().stringToIdentity("factory"))
         self.logger.info('Proxy: "%s"', proxy)
@@ -28,4 +29,5 @@ class Server(Ice.Application):
         adapter.activate()
         self.shutdownOnInterrupt()
         self.communicator().waitForShutdown()
+        factory_servant.guardar_estado("estados.json")
         return 0
